@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import PageWrapper from './components/reusables/PageWrapper';
 
+import Home from './components/pages/Home';
+import SignUp from './components/pages/Sign-up';
+import SignIn from './components/pages/Sign-in';
+import UserPage from './components/pages/User-Page';
+import AllPost from './components/pages/All-post';
+import AllParts from './components/pages/All-parts';
 function App() {
+
+  
+  const [user, setUser] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+
+    const email = localStorage.getItem("email")
+    if (email !== null) {
+      axios.get(`http://localhost:8080/getUserByEmail/${email}`)
+        .then((response) => {
+          console.log(response.data)
+          setUser(response.data)
+          setIsLoading(false)
+        })
+        .catch((e) => {
+          console.log(e)
+          setIsLoading(false)
+        })
+    }
+  }, [])
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PageWrapper user={user} setUser={setUser}>
+      <Routes>
+      <Route path="/" element={<Home user={user} />} />
+      <Route path="/Sign-up" element={<SignUp user={user} isLoading={isLoading} setIsLoading={setIsLoading} />} />
+      <Route path="/Sign-In" element={<SignIn user={user} setUser={setUser}  isLoading={isLoading} setIsLoading={setIsLoading} />} />
+      <Route path="/User-Page" element={<UserPage user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
+      <Route path="/All-post" element={<AllPost user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
+      <Route path="/All-parts" element={<AllParts user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
+      </Routes>
+    </PageWrapper>
   );
 }
 

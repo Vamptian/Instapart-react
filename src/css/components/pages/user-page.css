@@ -1,0 +1,15 @@
+.tile{
+    border: solid;
+    border-style: groove;
+    border-width: 1px;
+    height: 100%;
+    width: 100px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    background-color: transparent;
+
+}
+.header{
+    height: 50px;
+}
