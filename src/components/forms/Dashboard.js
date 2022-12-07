@@ -43,6 +43,9 @@ const Dashboard = (props) => {
                             <label>phoneNumber :</label>
                             {props.user.phoneNumber}
                         </div>
+                        <div className='flex-row space center'>
+                            <a href='/View-Offers'>View Offers</a>
+                        </div>
                     </div>
                 </div>
                 <div className='flex-col third-width space-apart'>

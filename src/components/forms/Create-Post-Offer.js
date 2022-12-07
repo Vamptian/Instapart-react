@@ -12,7 +12,7 @@ const CreatePostOffer = (props) => {
     const createOffer = () => {
         
         if (offer.price != '' && partId != '') {
-            axios.post(`http://localhost:8080/createPostOffer/${partId}/${props.post.postId}/${props.user.id}`, offer)
+            axios.put(`http://localhost:8080/createPostOffer/${partId}/${props.post.postId}/${props.user.id}`, offer)
                 .then((response) => {
                     console.log(response.data)
                     setMessage('')

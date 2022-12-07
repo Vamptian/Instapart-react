@@ -38,7 +38,7 @@ const MyWearhouse = (props) => {
 
 
 return(
-    <div className='flex-row full-width '> 
+    <div className='flex-row full-width'> 
         <div className='flex-col quarter-width background-beige center'>
                 <button className='side-bar-button space-out' value='create-part' onClick={handleWellView} >Add Part</button>
                 <button className='side-bar-button space-out' value='delete-part' onClick={handleWellView}>Delete Part</button>

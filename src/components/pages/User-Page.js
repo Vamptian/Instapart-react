@@ -63,7 +63,9 @@ const UserPage = (props) => {
     
 
       default:
-        return null;
+        return (
+          <Dashboard user={user} setUser={setUser} />
+        )
     }
   }
 

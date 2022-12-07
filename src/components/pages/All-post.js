@@ -45,7 +45,7 @@ const AllPost = (props) => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:8080/getAllPost')
+        axios.get(`http://localhost:8080/getAllPost/${props.user.id}`)
             .then((response) => {
                 console.log(response.data)
 
@@ -58,7 +58,7 @@ const AllPost = (props) => {
                 console.log(e)
             })
 
-    }, [])
+    }, [props.user])
 
 
     const toggleModal = () =>{

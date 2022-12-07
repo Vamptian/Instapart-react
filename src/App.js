@@ -9,6 +9,8 @@ import SignIn from './components/pages/Sign-in';
 import UserPage from './components/pages/User-Page';
 import AllPost from './components/pages/All-post';
 import AllParts from './components/pages/All-parts';
+import ViewOffers from './components/pages/View-Offers';
+
 function App() {
 
   
@@ -43,6 +45,7 @@ function App() {
       <Route path="/User-Page" element={<UserPage user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
       <Route path="/All-post" element={<AllPost user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
       <Route path="/All-parts" element={<AllParts user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
+      <Route path="/View-Offers" element={<ViewOffers user={user} setUser={setUser} isLoading={isLoading} setIsLoading={setIsLoading} />} />
       </Routes>
     </PageWrapper>
   );
