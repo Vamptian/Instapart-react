@@ -89,23 +89,24 @@ const AllParts = (props) => {
             return allParts.map((part) => {
 
                 return (
-                    <div className='flex-col post'>
+                    <div className='flex-col all-parts space-out'>
                         <div className='flex-row'>
-                            {part.id}
-                        </div>
-                        <div className='flex-row'>
-                            {part.name}
-                        </div>
-                        <div className='flex-row'>
-                            {part.discription}
-                        </div>
-                        <div className='flex-row'>
-                            {part.price}
-                        </div>
-                        <div className='flex-row'>
-                            {part.offers.length}
-                        </div>
-                        <div className='flex-row'>
+                        <label>Part Id: </label>
+                         {part.id}
+                    </div>
+                    <div className='flex-row center'>
+                        <label>name:</label>
+                       {part.name}
+                    </div>
+                    <div className='flex-row give-border center'>
+                        <label>Description</label>
+                        {part.discription}
+                    </div>
+                    <div className='flex-row center'>
+                        <label>Price:</label>
+                        {part.price}
+                    </div>
+                        <div className='flex-row center'>
                             <button name='partId' value={part.id} onClick={createOffer}>Place offer</button>
                         </div>
                     </div>
@@ -116,22 +117,27 @@ const AllParts = (props) => {
         else{return parts.map((part) => {
 
             return (
-                <div className='flex-col post'>
-                    <div className='flex-row'>
-                        {part.name}
-                    </div>
-                    <div className='flex-row'>
-                        {part.discription}
-                    </div>
-                    <div className='flex-row'>
-                        {part.price}
-                    </div>
-                    <div className='flex-row'>
-                        {part.offers.length}
-                    </div>
-                    <div className='flex-row'>
-                    <button name='partId' value={part.id} onClick={createOffer}>Place offer</button>                    </div>
+                <div className='flex-col all-parts space-out '>
+                <div className='flex-row'>
+                <label>Part Id: </label>
+                 {part.id}
+            </div>
+            <div className='flex-row center'>
+                <label>name:</label>
+               {part.name}
+            </div>
+            <div className='flex-row give-border center'>
+                <label>Description</label>
+                {part.discription}
+            </div>
+            <div className='flex-row center'>
+                <label>Price:</label>
+                {part.price}
+            </div>
+                <div className='flex-row center'>
+                    <button name='partId' value={part.id} onClick={createOffer}>Place offer</button>
                 </div>
+            </div>
             )
         })
     }
@@ -147,7 +153,7 @@ const AllParts = (props) => {
             )
         } else {
             return (
-                <div className='flex-col'>
+                <div className='flex-col wood space-down1 '>
                     <div className='flex-row center'>
                         <h1>search Through Parts</h1>
                     </div>
@@ -157,8 +163,8 @@ const AllParts = (props) => {
                     <div className='flex-row center'>
                         {count} Results found
                     </div>
-                    <div className='flex-col take-width space scroll give-border all-post-box'>
-                        <div className='flex-col '>
+                    <div className='flex-col take-width space scroll border-view all-post-box wall-background'>
+                        <div className='flex-col center '>
                             {showAllPart()}
                         </div>
                     </div>

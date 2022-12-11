@@ -12,3 +12,6 @@
     justify-content: left;
     align-items: left;
 }
+.bottom{
+    align-items: baseline;
+}

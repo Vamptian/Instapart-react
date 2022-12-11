@@ -35,7 +35,7 @@ const UserPostPortal = (props) => {
 
 return(
     <div className='flex-row fill center take-width'>
-       <div className='flex-col third-width center nav-menu space background-beige'>
+       <div className='flex-col third-width center nav-menu space wood'>
             <div className='flex-row space'>
                 <button className='nav-buttons' value='Veiw-my-post' onClick={handleWellView}>Veiw My Post</button>
             </div>
@@ -45,7 +45,7 @@ return(
                 <button className='nav-buttons'>Something</button>
             </div>
        </div>
-       <div className='flex-col two-third-width post-box'>
+       <div className='flex-col two-third-width post-box wall-background'>
         <div className='flex-col flex-wrap give-border'>
         {renderForm()}
         </div>

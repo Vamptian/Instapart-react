@@ -138,6 +138,8 @@ const ViewOffers = (props) => {
                     showMyPost()
                 )
                 break;
+                
+                    
 
 
 
@@ -146,13 +148,13 @@ const ViewOffers = (props) => {
     }
 
     return (
-        <div className='flex-col'>
+        <div className='flex-col space-down1 wood'>
             <div className='flex-row center space-out inline'>
                 <button className='buttons' value='My-post' onClick={handleWellView}>View post offers</button>
                 <button className='buttons' value='My-parts' onClick={handleWellView}>View part offers</button>
             </div>
-            <div className='flex-col take-width space scroll give-border all-post-box'>
-                <div className='flex-col'>
+            <div className='flex-col take-width space scroll give-border all-post-box wall-background'>
+                <div className='flex-col '>
                     {renderForm()}
                 </div>
             </div>

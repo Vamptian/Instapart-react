@@ -26,6 +26,7 @@ function App() {
           console.log(response.data)
           setUser(response.data)
           setIsLoading(false)
+        // .then(props)
         })
         .catch((e) => {
           console.log(e)

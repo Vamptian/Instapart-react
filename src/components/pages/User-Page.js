@@ -77,7 +77,7 @@ const UserPage = (props) => {
       )
     } else {
       return (
-        <div className="flex-col fill">
+        <div className=" space-down1 flex-col fill">
           <div className="flex-row backgroung-grey justify-center header">
             <div className="inline margin-auto header">
               <button className='tile center' value='Dashboard' onClick={handleWellView}>Dashboard</button>

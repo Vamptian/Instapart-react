@@ -28,7 +28,7 @@ const Header = (props) => {
              <span className='fill center'>MY ACCOUNT</span>
                 <div class="dropdown-content">
                     <p><li className='dropdown-buttons'><a href="/User-Page">My Account</a></li></p>
-                    <button onClick={clickHandler}><p><li className='dropdown-buttons'><a href="/">Sign Out</a></li></p></button>
+                    <button onClick={clickHandler} className='dropdown-buttons'><p><li className='dropdown-buttons'><a href="/">Sign Out</a></li></p></button>
                 </div>
             </div>)
         }
@@ -38,10 +38,10 @@ const Header = (props) => {
 
 
 return(
-    <div className='flex-row background-teal'>
-        <div className='flex-col third-width'>
+    <div className='flex-row background-teal header-main fill-header'>
+        <div className='flex-col third-width center'>
             <div className='flex-row center'>
-                <button className='logo space-out'>INSTA-PART</button>
+                <a className='logo ' href='/'>INSTA-PART</a>
             </div>
         </div>
         <div className='flex-row two-third-width inline center'>

@@ -28,14 +28,14 @@ const Dashboard = (props) => {
 
 
     return (
-        <div className='flex-col fill space'>
-            <div className='flex-row'>
-                <div className='flex-col third-width center'>
-                    <div className='flex-col user-card background-beige'>
+        <div className='flex-col wood center fill'>
+            <div className='flex-row space'>
+                <div className='flex-col  '>
+                    <div className='flex-col user-card wall-background center'>
                         <div className='flex-row space1'>
                             <h1>Welcome {props.user.username}</h1>
                         </div>
-                        <div className='flex-row space1 center'>
+                        <div className='flex-row center'>
                             <label>Email :</label>
                             {props.user.email}
                         </div>
@@ -44,55 +44,42 @@ const Dashboard = (props) => {
                             {props.user.phoneNumber}
                         </div>
                         <div className='flex-row space center'>
-                            <a href='/View-Offers'>View Offers</a>
+                            <a href='/View-Offers' className='view-offer center'>View Offers</a>
                         </div>
                     </div>
                 </div>
-                <div className='flex-col third-width space-apart'>
-                    <div className='flex-col user-card background-beige space'>
-                        <div className='flex-row space1 margin-auto '>
-                            <h1>Post Offers Received</h1>
-                        </div>
-                        <div className='flex-row space1 margin-auto '>
-                            <h1>{howManyPostOffers()}</h1>
-                        </div>
-                        <div className='flex-row space1 margin-auto '>
-                            <h1>Part Offers Received</h1>
-                        </div>
-                        <div className='flex-row space1 margin-auto '>
-                            <h1>{howManyPartOffers()}</h1>
-                        </div>
 
+            </div>
+            <div className='flex-col   '>
+                <h1 className='center'>Welcome to your dashboard</h1>
+                <div className='flex-row give-border wall-background '>
+                    <div className='flex-col center space-out'>
+                        <h3>Parts in your storage</h3>
+                        {props.user.parts.length}
                     </div>
-                </div>
-                <div className='flex-col third-width'>
-                    <div className='flex-col user-card background-beige space'>
-                        <div className='flex-row space1 margin-auto'>
-                            <h1>Parts in wearhouse</h1>
-                        </div>
-                        <div className='flex-row space1 margin-auto'>
-                            <h1>{props.user.parts.length}</h1>
-                        </div>
+                    <div className='flex-col center space-out'>
+                        <h3>Parts you are requesting</h3>
+                        {props.user.posts.length}
                     </div>
-                    <div className='flex-col user-card background-beige'>
-                        <div className='flex-row space1 margin-auto'>
-                            <h1>Parts Your Requesting</h1>
-                        </div>
-                        <div className='flex-row space1 margin-auto'>
-                            <h1>{props.user.posts.length}</h1>
-                        </div>
+                    <div className='flex-col center space-out'>
+                        <h3>Part offers recived</h3>
+                        {howManyPartOffers()}
+                    </div>
+                    <div className='flex-col center space-out'>
+                        <h3>Post offers recived</h3>
+                        {howManyPostOffers()}
                     </div>
                 </div>
             </div>
             <div className='flex-row move-down '>
                 <div className='flex-col half-width'>
-                    <div className='flex-col take-width give-border background-beige '>
+                    <div className='flex-col take-width give-border wall-background '>
                         <h1 className='center'>Recent Post By Me</h1>
                         <ViewMyPost user={props.user} setUser={props.setUser} />
                     </div>
                 </div>
                 <div className='flex-col half-width'>
-                    <div className='flex-col take-width give-border background-beige '>
+                    <div className='flex-col take-width give-border wall-background '>
                         <h1 className='center'>My Parts</h1>
                         <MyParts user={props.user} setUser={props.setUser} />
                     </div>
