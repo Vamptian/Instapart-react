@@ -19,20 +19,20 @@ const AllParts = (props) => {
 
     useEffect(() => {
 
-        if(props.user.id !== undefined){
+        if (props.user.id !== undefined) {
             console.log("here")
-        axios.get(`http://localhost:8080/getAllParts/${props.user.id}`)
-            .then((response) => {
-                console.log(response.data)
+            axios.get(`http://localhost:8080/getAllParts/${props.user.id}`)
+                .then((response) => {
+                    console.log(response.data)
 
-                setAllParts(response.data)
-                props.setIsLoading(false)
+                    setAllParts(response.data)
+                    props.setIsLoading(false)
 
-            })
-            .catch((e) => {
-                console.log(e)
-            })
-        }else{console.log(props.data)}
+                })
+                .catch((e) => {
+                    console.log(e)
+                })
+        } else { console.log(props.data) }
     }, [props.user])
 
 
@@ -91,21 +91,25 @@ const AllParts = (props) => {
                 return (
                     <div className='flex-col all-parts space-out'>
                         <div className='flex-row'>
-                        <label>Part Id: </label>
-                         {part.id}
-                    </div>
-                    <div className='flex-row center'>
-                        <label>name:</label>
-                       {part.name}
-                    </div>
-                    <div className='flex-row give-border center'>
-                        <label>Description</label>
-                        {part.discription}
-                    </div>
-                    <div className='flex-row center'>
-                        <label>Price:</label>
-                        {part.price}
-                    </div>
+                            <label>Part Id: </label>
+                            {part.id}
+                        </div>
+                        <div className='flex-row center'>
+                            <label>name:</label>
+                            {part.name}
+                        </div>
+                        <div className='flex-row give-border center'>
+                            <label>Description</label>
+                            {part.discription}
+                        </div>
+                        <div className='flex-row center'>
+                            <label>Price:</label>
+                            {part.price}
+                        </div>
+                        <div className='flex-row center'>
+                            <label>Offers:</label>
+                            {part.offers.length}
+                        </div>
                         <div className='flex-row center'>
                             <button name='partId' value={part.id} onClick={createOffer}>Place offer</button>
                         </div>
@@ -114,33 +118,38 @@ const AllParts = (props) => {
             })
         }
 
-        else{return parts.map((part) => {
+        else {
+            return parts.map((part) => {
 
-            return (
-                <div className='flex-col all-parts space-out '>
-                <div className='flex-row'>
-                <label>Part Id: </label>
-                 {part.id}
-            </div>
-            <div className='flex-row center'>
-                <label>name:</label>
-               {part.name}
-            </div>
-            <div className='flex-row give-border center'>
-                <label>Description</label>
-                {part.discription}
-            </div>
-            <div className='flex-row center'>
-                <label>Price:</label>
-                {part.price}
-            </div>
-                <div className='flex-row center'>
-                    <button name='partId' value={part.id} onClick={createOffer}>Place offer</button>
-                </div>
-            </div>
-            )
-        })
-    }
+                return (
+                    <div className='flex-col all-parts space-out '>
+                        <div className='flex-row'>
+                            <label>Part Id: </label>
+                            {part.id}
+                        </div>
+                        <div className='flex-row center'>
+                            <label>name:</label>
+                            {part.name}
+                        </div>
+                        <div className='flex-row give-border center'>
+                            <label>Description</label>
+                            {part.discription}
+                        </div>
+                        <div className='flex-row center'>
+                            <label>Price:</label>
+                            {part.price}
+                        </div>
+                        <div className='flex-row center'>
+                            <label>Offers:</label>
+                            {part.offers.length}
+                        </div>
+                        <div className='flex-row center'>
+                            <button name='partId' value={part.id} onClick={createOffer}>Place offer</button>
+                        </div>
+                    </div>
+                )
+            })
+        }
     }
 
 

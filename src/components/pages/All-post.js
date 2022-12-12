@@ -7,10 +7,7 @@ import LoadingSpinner from '../reusables/Loading-spinner'
 import CreatePostOffer from '../forms/Create-Post-Offer'
 
 const AllPost = (props) => {
-
-
-
-    const [allPosts, setAllPosts] = useState([])
+const [allPosts, setAllPosts] = useState([])
     const [count, setCount] = useState(0)
 
     const [posts, setPosts] = useState([])
@@ -18,7 +15,6 @@ const AllPost = (props) => {
         postId: 0
     })
     const [ismodal, setIsmodal] = useState(false)
-
 
 
 
@@ -62,6 +58,7 @@ const AllPost = (props) => {
 
 
     const toggleModal = () => {
+        console.log(post.postId)
         if (ismodal) {
             return (
                 <div className='flex-col fill position modal center'>
@@ -83,8 +80,6 @@ const AllPost = (props) => {
     }
 
 
-
-
     const showAllPost = () => {
 
         if (count === 0) {
@@ -101,7 +96,7 @@ const AllPost = (props) => {
                         {post.offers.length}
                     </div>
                     <div className='flex-row center'>
-                        <button value={post} onClick={createOffer}>Place offer</button>
+                        <button name='postId' value={post.id} onClick={createOffer}>Place offer</button>
                     </div>
                     <div className='flex-row bottom right'>
                         <div className='give-border'>
@@ -139,14 +134,10 @@ const AllPost = (props) => {
                     </div>
 
                 </div>
-
-
             )
         })
 
     }
-
-
 
     const renderSpinnerOrContent = () => {
         // console.log(props.user)
