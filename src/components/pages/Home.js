@@ -6,7 +6,7 @@ import '../../css/components/pages/home.css'
 
 const Home = (props) => {
 
-    
+
     // useEffect(() => {
 
     //     if (localStorage.getItem("email")) {
@@ -23,27 +23,39 @@ const Home = (props) => {
 
     return (
         <div className="flex-col">
-            <div className="flex-col background welcome fill">
+            <div className="flex-col background space-down1 fill">
+                <div className="flex-row welcome  center">
+                   
+                </div>
+            </div>
+            <div className="welcome center">
+                    <h1 className="welcome-text">Welcome to InstaPart</h1>
+            </div>
+            <div className="flex-col welcome   white body center ">
+                <div className="flex-row">
+                    <h1 className="h">Instapart</h1>
+                </div>
+            </div>
+            <div className="flex-col welcome center white-background">
                 <div className="flex-row center">
-                    <h1>Welcome to InstaPart</h1>
+                    <h1 className="h title">BUY</h1>
                 </div>
-
-            </div>
-            <div className="flex-col home-space center background-beige">
-                
-                    <h1 className="give-border">This will be some random title</h1>
-                    <p className="take-width">this will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we do</p>       
-            </div>
-            <div className="flex-row background-beige">
                 <div className="flex-col half-width center">
-                    <h1 className="give-border background-teal">Buy</h1>
-                    <p className="take-width give-border background-teal">this will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we do</p>       
-
+                    <h1 className="">Our goal is to cennect more small shops with part venders in a more efficent way by creating a well known part exchange</h1>
                 </div>
-                <div className="flex-col half-width center ">
-                    <h1 className="give-border background-teal">Sell</h1>
-                    <p className="take-width give-border background-teal">this will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we dothis will be all about our website how you can buy and sell car parts and give a breif description about what we do</p>       
-
+            </div>
+            <div className="flex-row welcome white center">
+                <div className="flex-col half-width">
+                    <h1 className="h title ">SELL</h1>
+                    <h1 className="">Same goes for small time or big time part collecters. instapart lets you venture out and start selling your parts to shops and dealerships</h1>
+                </div>
+            </div>
+            <div className="flex-col welcome center white-background">
+                <div className="flex-row center">
+                    <h1 className="h title">DELIVER</h1>
+                </div>
+                <div className="flex-col half-width center">
+                    <h1 className="">Our future and true goal is to get you more quality parts faster. our new delivery feature will get drivers to take your part orders and either search the yards for you. or simply pick up your orders letting you save much needed time in the shop</h1>
                 </div>
             </div>
         </div>

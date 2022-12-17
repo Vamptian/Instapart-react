@@ -34,7 +34,7 @@ const MyContacts = (props) => {
             return (
 
 
-                <div className='flex-col contact-card space-out'>
+                <div className='flex-col contact-card white-background space-out'>
                     <div className='flex-row'>
                         {user.username}
                     </div>
@@ -80,13 +80,13 @@ const MyContacts = (props) => {
     }
 
     return (
-        <div className='flex-col container center background-beige '>
+        <div className='flex-col container center wood'>
             <div className='flex-col contact-portal background-teal '>
                 <div className='flex-row inline center margin-vert'>
                     <button className='port-buttons' value='my-contacts' onClick={handleWellView}>my contact</button>
                     <button className='port-buttons' value='show-all-users' onClick={handleWellView}>all users</button>
                 </div>
-                <div className='flex-col view-port justify-center scroll backgroung-white'>
+                <div className='flex-col view-port justify-center scroll wall-background'>
 
                     {renderForm()}
 

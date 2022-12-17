@@ -1,6 +1,6 @@
 .logo{
     border: solid;
-    font-size: 20px;
+    font-size: 30px;
     background-color: white;
    
 }
@@ -28,11 +28,9 @@
   }
  .tile{
     
-    /* border: solid;
-    border-style: groove;
-    border-width: 1px; */
-    height: 100px;
-    width: 100px;
+    
+    /* height: 100px;
+    width: 100px; */
     justify-content: center;
     align-content: center;
     justify-items: center;
@@ -48,7 +46,7 @@ a{
     color: black;
 }
 .tile:hover{
-  background-color: #558a8d;
+  background-color: #061bd7;
 }
 .header-main{
   position: fixed;

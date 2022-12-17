@@ -11,6 +11,10 @@ const CreatePartOffer = (props) => {
         price: 0
     })
 
+    const closeModal = () =>{
+        console.log('here')
+        props.setIsmodal(false)
+    }
 
     useEffect(() => {
 
@@ -98,7 +102,12 @@ const CreatePartOffer = (props) => {
 
     return (
 
-        <div className='flex-col give-border modal-box background-teal '>
+        <div className='flex-col give-border modal-box wood '>
+            <div className='flex-row right give-border background-teal'>
+                        <div>
+                            <button onClick={closeModal} className='close-button'>X</button>
+                        </div>
+                    </div>
             <div className='flex-row fill'>
                 
                 <div className='flex-col two-third-width '>
@@ -117,7 +126,7 @@ const CreatePartOffer = (props) => {
                     </div>
                 </div>
                 <div className='flex-col  center third-width'>
-                    <div className='flex-col give-border'>
+                    <div className='flex-col wall-background  give-border'>
                     <div className='flex-row center '>
                         <h1 className=''><label>part: </label>{part.name} </h1>
                     </div>

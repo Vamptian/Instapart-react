@@ -16,7 +16,7 @@ const [allPosts, setAllPosts] = useState([])
     })
     const [ismodal, setIsmodal] = useState(false)
 
-
+   
 
     const handleOnChange = async (event) => {
         let value = event.target.value;
@@ -147,22 +147,22 @@ const [allPosts, setAllPosts] = useState([])
             )
         } else {
             return (
-                <div className='flex-col wood space-down1 '>
+                <div className='flex-col wood space-down1 fill '>
                     <div className='flex-row'>
                         <div>
                             {createOffer}
                         </div>
                     </div>
                     <div className='flex-row center'>
-                        <h1>search</h1>
+                        <h1>search Through All Post</h1>
+                    </div>
+                    <div className='flex-row center '>
+                        <input className='' type="text" name="search" id="search" placeholder="Search Filter" onChange={handleOnChange} />
                     </div>
                     <div className='flex-row center'>
-                        <input type="text" name="search" id="search" placeholder="Search Filter" onChange={handleOnChange} />
+                       <h2> {count} Results found</h2>
                     </div>
-                    <div className='flex-row center'>
-                        {count} Results found
-                    </div>
-                    <div className='flex-col take-width space scroll give-border all-post-box wall-background'>
+                    <div className='flex-col take-width space-down1 scroll give-border all-post-box wall-background'>
                         <div className='flex-col  '>
                             {showAllPost()}
                         </div>

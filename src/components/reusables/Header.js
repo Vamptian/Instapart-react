@@ -9,7 +9,7 @@ const Header = (props) => {
         navigator('/')
     }
 
-    const navigator = useNavigate(props)
+    // const navigator = useNavigate()
 
 
     const renderSignInOutButtons = () => {

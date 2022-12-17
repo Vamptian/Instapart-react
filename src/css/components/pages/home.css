@@ -1,5 +1,5 @@
 .background{
-    background-image: url('../../../../car2.jpg');
+    background-image: url('../../../../homepage.jpg');
     background-size: contain;
 	background-size: 100% 100%;
 	min-height: 100%;
@@ -8,8 +8,79 @@
     position: fixed;
 }
 .welcome{
-    height: 400px;
+    height: 550px;
 }
 .home-space{
-    margin-top: 400px;
+    margin-top: 600px;
 }
+.welcome-text{
+    font-size: 50px;
+    color: white;
+    
+    
+}
+
+@keyframes color {
+    0%   { background: #f8f8f8 }
+    20%  { background: #7c7cf8 }
+    40%  { background: #3e3ef8}
+    60%  { background: #79B4B7 }
+    80%  { background: #33CCCC }
+    100% { background: #f8f8f8; }
+  }
+
+.white{
+    background-color: #f8f8f8;
+    animation: color 9s infinite linear;
+}
+.bsd{
+    font-size: 70px;
+    text-decoration: underline;
+}
+.white-background{
+    background-color: white;
+}
+.buy{
+    background-image: url(../../../../car-part.jpg);
+    background-size: contain;
+	background-size: 100% 100%;
+	min-height: 100%;
+	background-repeat: no-repeat;
+    width: 50%;
+    
+}
+.sell{
+    background-image: url(../../../car-sell.jpg);
+    background-size: contain;
+	background-size: 100% 100%;
+	min-height: 100%;
+	background-repeat: no-repeat;
+    
+}
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+
+
+.title {
+	font-family: "Cairo";
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* height: 100vh; */
+	/* letter-spacing: 1px; */
+	/* line-height:2 */
+}
+
+.h {
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 120px;
+	margin: 10px 0;
+}
+

@@ -15,3 +15,9 @@
 .bottom{
     align-items: baseline;
 }
+.margin-center{
+    margin: auto;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}

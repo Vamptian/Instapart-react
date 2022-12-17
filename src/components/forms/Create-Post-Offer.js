@@ -9,6 +9,11 @@ const CreatePostOffer = (props) => {
         price: 0
     })
 
+    const closeModal = () =>{
+        
+        props.setIsmodal(false)
+    }
+
     const createOffer = () => {
         
         if (offer.price != '' && partId != '') {
@@ -90,7 +95,12 @@ const CreatePostOffer = (props) => {
 
     return (
         <div className='flex-col give-border modal-box  '>
-            <div className='flex-row scroll background-teal'>
+            <div className='flex-row right give-border background-teal'>
+                        <div>
+                            <button onClick={closeModal} className='close-button'>X</button>
+                        </div>
+                    </div>
+            <div className='flex-row scroll wood'>
                 <div className='flex-col half-width give-border '>
                     <div className='flex-row center'>
                         <h1>Place an offer</h1>

@@ -162,7 +162,7 @@ const AllParts = (props) => {
             )
         } else {
             return (
-                <div className='flex-col wood space-down1 '>
+                <div className='flex-col wood space-down1 fill '>
                     <div className='flex-row center'>
                         <h1>search Through Parts</h1>
                     </div>
@@ -170,9 +170,9 @@ const AllParts = (props) => {
                         <input type="text" name="search" id="search" placeholder="Search Filter" onChange={handleOnChange} />
                     </div>
                     <div className='flex-row center'>
-                        {count} Results found
+                       <h2> {count} Results found</h2>
                     </div>
-                    <div className='flex-col take-width space scroll border-view all-post-box wall-background'>
+                    <div className='flex-col take-width space-down1 scroll border-view all-post-box wall-background'>
                         <div className='flex-col center '>
                             {showAllPart()}
                         </div>

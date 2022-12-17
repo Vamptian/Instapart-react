@@ -8,13 +8,18 @@ const AcceptRejectOffers = (props) => {
     const [post, setPost] = useState({})
     const [part, setPart] = useState({})
 
+    const closeModal = () =>{
+        console.log('set modal to empty string ')
+        props.setIsModal('')
+    }
+
     const makePartTransfer = (event) => {
 
         axios.post(`http://localhost:8080/makePartTransfer/${event.target.value}/${part.id}`, props.user)
         .then((response) => {
             console.log(response.data)
             props.setUser(response.data)
-
+            props.setIsModal('')
         })
         .catch((e) => {
             console.log(e)
@@ -22,12 +27,13 @@ const AcceptRejectOffers = (props) => {
     }
 
     const makeTransfer = (event) => {
-        console.log(props.user)
-        console.log(props.user)
+        
+        
         axios.post(`http://localhost:8080/makeTransfer/${event.target.value}/${post.id}`, props.user)
             .then((response) => {
                 console.log(response.data)
                 props.setUser(response.data)
+                props.setIsModal('')
 
             })
             .catch((e) => {
@@ -38,7 +44,7 @@ const AcceptRejectOffers = (props) => {
     const showPartOffers = () => {
         if (part.id === undefined) {
             return (
-                <div>'</div>
+                <div></div>
             )
         }
         else {
@@ -48,9 +54,7 @@ const AcceptRejectOffers = (props) => {
                         <div className='flex-row'>
                             {offer.price} price
                         </div>
-                        <div className='flex-row'>
-                            {offer.user.username} user
-                        </div>
+
                         <button className='buttons' value={offer.id} onClick={makePartTransfer}>Accept Offer</button>
                     </div>
                 )
@@ -59,9 +63,11 @@ const AcceptRejectOffers = (props) => {
     }
 
     const showPostOffers = () => {
+        console.log(props.postId)
+        console.log(`/${post.Id} post.Id`)
         if (post.id === undefined) {
             return (
-                <div>'</div>
+                <div></div>
             )
         }
         else {
@@ -70,7 +76,7 @@ const AcceptRejectOffers = (props) => {
                 return (
                     <div className='flex-col give-border space backgroung-white post'>
                         <div className='flex-row'>
-                            {offer.user.username}
+                            {offer.userId}
                         </div>
                         <div className='flex-row'>
                             {offer.price} price
@@ -90,62 +96,77 @@ const AcceptRejectOffers = (props) => {
     }
 
     useEffect(() => {
-
-        console.log(props.postId)
-        console.log(props.partId)
-        if (props.ismodal === '1') {
+        console.log(`/${props.isModal} isModel`)
+        console.log(`/${props.partId} props.partId`)
+        console.log(`/${props.postId} props.postId`)
+        if (props.isModal === '1') {
             axios.get(`http://localhost:8080/getPostById/${props.postId}`)
                 .then((response) => {
                     console.log(response.data)
 
                     setPost(response.data)
-                    console.log(props.post)
-
-                })
-                .catch((e) => {
-                    console.log(e)
-                })
-            }else if(props.ismodal === '2'){
-                axios.get(`http://localhost:8080/getPartById/${props.partId}`)
-                .then((response) => {
-                    console.log(response.data)
-
-                    setPart(response.data)
                     
 
                 })
                 .catch((e) => {
                     console.log(e)
                 })
+            }else if(props.isModal === '2'){
+                console.log("here")
+                axios.get(`http://localhost:8080/getPartById/${props.partId}`)
+                .then((response) => {
+                    console.log(response.data)
+
+                    setPart(response.data)
+                    props.setIsModal('')
+
+                })
+                .catch((e) => {
+                    console.log(e)
+                })
             }
-        }, [props.postId, props.part])
+        }, [props.postId, props.partId, props.ismodal])
 
 
-    const showModel = () => {
-        console.log(props.ismodal)
+    const showModal = () => {
+        console.log(`/${props.isModal} isModel`)
+        console.log(`/${props.partId} partId`)
+        console.log(`/${props.postId} postId`)
 
-        if (props.ismodal === '1') {
+        if (props.isModal === '1') {
             return (
-                <div className='flex-col give-border modal-box background-teal'>
+                <div className='flex-col give-border modal-box wood'>
+                    <div className='flex-row right give-border background-teal'>
+                        <div>
+                            <button onClick={closeModal} className='close-button'>X</button>
+                        </div>
+                    </div>
                     <div className='flex-row max'>
                         <div className='flex-col half-width center'>
                             <h1>Accept or reject offer</h1>
+                            {post.discription}
                         </div>
-                        <div className='flex-col half-width give-border scroll '>
+                        
+                        <div className='flex-col half-width give-border scroll wall-background '>
                             {showPostOffers()}
                         </div>
                     </div>
                 </div>
             )
         }
-        if (props.ismodal === '2') {
+        if (props.isModal === '2') {
             return (
-                <div className='flex-col give-border modal-box background-teal'>
-                    <div className='flex-row max'>
+                <div className='flex-col give-border modal-box wood'>
+                    <div className='flex-row right give-border background-teal'>
+                        <div>
+                            <button onClick={closeModal} className='close-button'>X</button>
+                        </div>
+                    </div>
+                    <div className='flex-row max  '>
                         <div className='flex-col half-width center'>
                             <h1>Accept or reject offer on part</h1>
                         </div>
-                        <div className='flex-col half-width give-border scroll '>
+                        <div className='flex-col half-width give-border scroll wall-background '>
                             {showPartOffers()}
                         </div>
                     </div>
@@ -155,7 +176,7 @@ const AcceptRejectOffers = (props) => {
 
     }
     return (
-        showModel()
+        showModal()
     )
 }
 export default AcceptRejectOffers

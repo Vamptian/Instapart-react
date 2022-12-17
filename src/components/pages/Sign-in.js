@@ -32,6 +32,7 @@ const SignIn = (props) =>{
                     console.log(response.data)
                     localStorage.setItem("email", response.data.email)
                     navigator('/')
+                    props.setUser(response.data)
                 }).catch((e) => {
                     console.log(e)
                     setMessage(e.response.data)
@@ -56,7 +57,7 @@ const SignIn = (props) =>{
 
     return(
 
-        <div className='flex-col background-beige center'>
+        <div className='flex-col background-beige fill center'>
         <div className='flex-col form background-teal'>
             <div className='flex-col center'>
             <div className='flex-row'>
@@ -68,7 +69,7 @@ const SignIn = (props) =>{
             
          
             <label>EMAIL</label>
-            <input type='text' name="email" value={user.email} onChange={changeHandler} />
+            <input className="input" type='text' name="email" value={user.email} onChange={changeHandler} />
 
             <label>PASSWORD</label>
             <input className='' type='password' name="password" value={user.password} onChange={changeHandler} /> 

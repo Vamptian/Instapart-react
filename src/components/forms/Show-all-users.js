@@ -50,7 +50,7 @@ const ShowAllUsers = (props) => {
 
         return allUsers.map((user) => {
             if (user.id !== props.user.id) {
-                return <div className='flex-col contact-card space-out '>
+                return <div className='flex-col contact-card white-background space-out '>
                     <div className='flex-row'>
                         {user.username}
                     </div>

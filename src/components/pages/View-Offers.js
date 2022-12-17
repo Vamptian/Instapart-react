@@ -1,5 +1,5 @@
 import '../../css/components/pages/view-offers.css'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router"
 import axios from 'axios'
 import MyParts from '../forms/My-parts'
@@ -9,35 +9,40 @@ import AcceptRejectOffers from '../forms/Accept-reject-offers'
 
 const ViewOffers = (props) => {
     const [form, setForm] = useState('')
-    const [ismodal, setIsmodal] = useState('')
+    const [isModal, setIsModal] = useState('')
     const [postId, setPostId] = useState(0)
     const [partId, setPartId] = useState({})
+
 
 
 
     const viewPostOffer = (event) => {
 
         setPostId(event.target.value)
-        console.log(postId)
-        setIsmodal('1')
+
+        setIsModal('1')
     }
     const viewPartOffer = (event) => {
 
         setPartId(event.target.value)
-        console.log(partId)
-        setIsmodal('2')
+        
+        setIsModal('2')
     }
 
     const toggleModal = () => {
-        console.log(ismodal)
-        console.log(partId)
-        if(ismodal !== '')
+        console.log(`/${isModal} isModel`)
+        console.log(`/${partId} partId`)
+        console.log(`/${postId} postId`)
+        if (isModal !== '')
             return (
                 <div className='flex-col fill position modal center'>
-                    <AcceptRejectOffers postId={postId} user={props.user} setUser={props.setUser} ismodal={ismodal} setIsmodal={setIsmodal} partId={partId} />
+                    <AcceptRejectOffers postId={postId} user={props.user} setUser={props.setUser} isModal={isModal} setIsModal={setIsModal} partId={partId} />
                 </div>
             )
-       
+        else if (isModal === '') {
+            return null
+        }
+
 
     }
 
@@ -138,8 +143,8 @@ const ViewOffers = (props) => {
                     showMyPost()
                 )
                 break;
-                
-                    
+
+
 
 
 
@@ -148,7 +153,7 @@ const ViewOffers = (props) => {
     }
 
     return (
-        <div className='flex-col space-down1 wood'>
+        <div className='flex-col space-down1 wood fill'>
             <div className='flex-row center space-out inline'>
                 <button className='buttons' value='My-post' onClick={handleWellView}>View post offers</button>
                 <button className='buttons' value='My-parts' onClick={handleWellView}>View part offers</button>
