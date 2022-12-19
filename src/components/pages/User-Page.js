@@ -80,10 +80,10 @@ const UserPage = (props) => {
         <div className=" space-down1 flex-col fill">
           <div className="flex-row backgroung-grey justify-center header">
             <div className="inline margin-auto header">
-              <button className='tile center' value='Dashboard' onClick={handleWellView}>Dashboard</button>
-              <button className='tile center' value='My-Wearhouse' onClick={handleWellView}>My Wearhouse</button>
-              <button className='tile center' value='My-contacts' onClick={handleWellView}>My Contacts</button>
-              <button className='tile center' value='User-post-portal' onClick={handleWellView}>Posts</button>
+              <button className='user-tile center' value='Dashboard' onClick={handleWellView}>Dashboard</button>
+              <button className='user-tile center' value='My-Wearhouse' onClick={handleWellView}>My Warehouse</button>
+              <button className='user-tile center' value='My-contacts' onClick={handleWellView}>My Contacts</button>
+              <button className='user-tile center' value='User-post-portal' onClick={handleWellView}>Posts</button>
               
             </div>
           </div>

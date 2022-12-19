@@ -87,7 +87,7 @@ const SignUp = (props) => {
         <div className='flex-row wall-background fill  center '>
             <div className='flex-col  half-width'>
                 <div className='flex-row center'>
-                    <h1>Welcome to instapart</h1>
+                    <h1 className='welcome-sign-up'>Welcome to instapart</h1>
                 </div>
                 <div className='flex-row center'>
                     <h1>Sign up</h1>

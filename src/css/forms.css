@@ -19,8 +19,8 @@
     border: solid;
     justify-content: center;
     border-radius: 10px;
-    overflow: scroll;
-    flex-wrap: wrap;
+    
+    
     background-color: white;
 }
 
@@ -156,11 +156,9 @@ align-items: center;
     background-color: #4CAF50;
     color: white;
     justify-content: center;
-    
     border: none;
-    
-    cursor: pointer
-    
+    cursor: pointer;
+    font-size: 1.25em;
   }
 .padding-bottom{
     padding-bottom: 40px;
@@ -171,11 +169,12 @@ align-items: center;
 }
 .max{height: 100%;}
 .wood{
-    background-image: url('../../wood.jpg');
+    background-color: #eee;
+    /* background-image: url('../../wood.jpg');
     background-size: contain;
 	background-size: 100% 100%;
 	
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; */
     
     
 }
@@ -192,8 +191,8 @@ align-items: center;
     border: solid;
     
     border-radius: 10px;
-    overflow: scroll;
-    flex-wrap: wrap;
+    
+    
     background-color: white;
     
 }
@@ -210,6 +209,13 @@ align-items: center;
 .close-button{
     background-color: white;
     border-radius: 5px;
+    margin:10px;
+    align-content: center;
+}
+.close-button:hover {
+    cursor: pointer;
+    background-color: tomato;
+
 }
 input[type=text], select {
     width: 70%;
@@ -220,3 +226,16 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  .bottom-fix{
+    margin-bottom: 70px;
+  }
+  .bidPartLabel {
+    font-size: 1.25em;
+    padding-right: 10px;
+  }
+  .bidPartInput input {
+    width: 100px;
+    font-weight: 1em;
+  }
+  

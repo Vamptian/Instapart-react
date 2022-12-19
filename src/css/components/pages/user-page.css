@@ -1,14 +1,18 @@
-.tile{
-    border: solid;
-    border-style: groove;
-    border-width: 1px;
+.user-tile{
+
+    
     height: 100%;
     width: 100px;
     justify-content: center;
     align-content: center;
     justify-items: center;
     background-color: transparent;
+    border: none;
 
+}
+.user-tile:hover{
+    color: #eee;
+    background-color: #7d7d7d;
 }
 .header{
     height: 50px;

@@ -28,7 +28,7 @@ const Dashboard = (props) => {
 
 
     return (
-        <div className='flex-col wood center fill'>
+        <div className='flex-col wood center bottom-fix fill'>
             <div className='flex-row space'>
                 <div className='flex-col  '>
                     <div className='flex-col user-card wall-background center'>

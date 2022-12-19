@@ -44,7 +44,7 @@ return(
                 <button className='side-bar-button space-out' value='delete-part' onClick={handleWellView}>Delete Part</button>
                 <button className='side-bar-button space-out' value='my-parts' onClick={handleWellView}>My Parts</button>
         </div>
-        <div className='flex-col three-quarter-width give-border wall-background  '>
+        <div className='flex-col three-quarter-width center give-border wall-background  '>
                 <div className='flex-col flex-wrap '>
                 {renderForm()}
                 </div>

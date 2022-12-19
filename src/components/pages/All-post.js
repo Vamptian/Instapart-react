@@ -84,7 +84,7 @@ const [allPosts, setAllPosts] = useState([])
 
         if (count === 0) {
             return allPosts.map((post) => {
-
+                
                 return (
                     <div className='flex-col post'>
                     <div className='flex-row center '>
@@ -147,23 +147,23 @@ const [allPosts, setAllPosts] = useState([])
             )
         } else {
             return (
-                <div className='flex-col wood space-down1 fill '>
+                <div className='flex-col wood center space-down1 bottom-fix fill'>
                     <div className='flex-row'>
                         <div>
                             {createOffer}
                         </div>
                     </div>
                     <div className='flex-row center'>
-                        <h1>search Through All Post</h1>
+                        <h1>Search Post</h1>
                     </div>
-                    <div className='flex-row center '>
+                    <div className='flex-row half-width center '>
                         <input className='' type="text" name="search" id="search" placeholder="Search Filter" onChange={handleOnChange} />
                     </div>
                     <div className='flex-row center'>
                        <h2> {count} Results found</h2>
                     </div>
-                    <div className='flex-col take-width space-down1 scroll give-border all-post-box wall-background'>
-                        <div className='flex-col  '>
+                    <div className='flex-col take-width scroll bottom-fix give-border all-post-box wall-background'>
+                        <div className='flex-col   '>
                             {showAllPost()}
                         </div>
                     </div>

@@ -91,27 +91,26 @@ const AllParts = (props) => {
                 return (
                     <div className='flex-col all-parts space-out'>
                         <div className='flex-row'>
-                            <label>Part Id: </label>
+                            <label>Part ID: </label>
                             {part.id}
                         </div>
                         <div className='flex-row center'>
-                            <label>name:</label>
-                            {part.name}
+                            <label>Part Name: {part.name}</label>
                         </div>
+                        <label>Description</label>
                         <div className='flex-row give-border center'>
-                            <label>Description</label>
                             {part.discription}
                         </div>
                         <div className='flex-row center'>
-                            <label>Price:</label>
-                            {part.price}
+                            <label>Price: ${part.price}</label>
+                            
                         </div>
                         <div className='flex-row center'>
-                            <label>Offers:</label>
-                            {part.offers.length}
+                            <label>Offers: {part.offers.length}</label>
+                            
                         </div>
                         <div className='flex-row center'>
-                            <button name='partId' value={part.id} onClick={createOffer}>Place offer</button>
+                            <button name='partId' value={part.id} onClick={createOffer} className="place-offer-button">Place Offer</button>
                         </div>
                     </div>
                 )
@@ -128,7 +127,7 @@ const AllParts = (props) => {
                             {part.id}
                         </div>
                         <div className='flex-row center'>
-                            <label>name:</label>
+                            <label>Part Name:</label>
                             {part.name}
                         </div>
                         <div className='flex-row give-border center'>
@@ -136,12 +135,11 @@ const AllParts = (props) => {
                             {part.discription}
                         </div>
                         <div className='flex-row center'>
-                            <label>Price:</label>
-                            {part.price}
+                            <label>Price: ${part.price}</label>
+                            
                         </div>
                         <div className='flex-row center'>
-                            <label>Offers:</label>
-                            {part.offers.length}
+                            <label>Offers: {part.offers.length}</label>
                         </div>
                         <div className='flex-row center'>
                             <button name='partId' value={part.id} onClick={createOffer}>Place offer</button>
@@ -162,17 +160,17 @@ const AllParts = (props) => {
             )
         } else {
             return (
-                <div className='flex-col wood space-down1 fill '>
+                <div className='flex-col wood center bottom-fix space-down1 fill '>
                     <div className='flex-row center'>
-                        <h1>search Through Parts</h1>
+                        <h1>Search Parts</h1>
                     </div>
-                    <div className='flex-row center'>
+                    <div className='flex-row half-width center'>
                         <input type="text" name="search" id="search" placeholder="Search Filter" onChange={handleOnChange} />
                     </div>
                     <div className='flex-row center'>
-                       <h2> {count} Results found</h2>
+                       <h2> ({count}) Results Found</h2>
                     </div>
-                    <div className='flex-col take-width space-down1 scroll border-view all-post-box wall-background'>
+                    <div className='flex-col take-width space-down1 bottom-fix scroll border-view all-post-box wall-background'>
                         <div className='flex-col center '>
                             {showAllPart()}
                         </div>

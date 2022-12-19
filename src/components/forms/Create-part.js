@@ -72,7 +72,7 @@ const toggle = () => {
 
 
 return(
-    <div className='flex-col form'> 
+    <div className='flex-col background-teal form'> 
         <div className='flex-row'>CREATE PART</div>
         <div className='flex-row'>Please enter all part information</div>
         <label>Is this for sale</label>

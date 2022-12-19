@@ -29,11 +29,11 @@ const Home = (props) => {
                 </div>
             </div>
             <div className="welcome center">
-                    <h1 className="welcome-text">Welcome to InstaPart</h1>
+                    <h1 className="welcome-text">Welcome to Insta-Part</h1>
             </div>
             <div className="flex-col welcome   white body center ">
                 <div className="flex-row">
-                    <h1 className="h">Instapart</h1>
+                    <h1 className="h">Insta-part</h1>
                 </div>
             </div>
             <div className="flex-col welcome center white-background">
@@ -41,13 +41,13 @@ const Home = (props) => {
                     <h1 className="h title">BUY</h1>
                 </div>
                 <div className="flex-col half-width center">
-                    <h1 className="">Our goal is to cennect more small shops with part venders in a more efficent way by creating a well known part exchange</h1>
+                    <h1 className="">Our goal is to connect small shops with part venders by creating a well known part exchange</h1>
                 </div>
             </div>
             <div className="flex-row welcome white center">
                 <div className="flex-col half-width">
                     <h1 className="h title ">SELL</h1>
-                    <h1 className="">Same goes for small time or big time part collecters. instapart lets you venture out and start selling your parts to shops and dealerships</h1>
+                    <h1 className="">Whether your inventory is big or small, Instapart lets you venture out and start selling your parts to shops and dealerships. </h1>
                 </div>
             </div>
             <div className="flex-col welcome center white-background">
@@ -55,7 +55,7 @@ const Home = (props) => {
                     <h1 className="h title">DELIVER</h1>
                 </div>
                 <div className="flex-col half-width center">
-                    <h1 className="">Our future and true goal is to get you more quality parts faster. our new delivery feature will get drivers to take your part orders and either search the yards for you. or simply pick up your orders letting you save much needed time in the shop</h1>
+                    <h1 className="">Our goal is to get you quality parts quick. Insta-Part salvage specialists will search the yards for you, or simply pick up your orders letting you save much needed time in the shop</h1>
                 </div>
             </div>
         </div>

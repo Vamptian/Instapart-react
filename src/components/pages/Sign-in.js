@@ -57,8 +57,8 @@ const SignIn = (props) =>{
 
     return(
 
-        <div className='flex-col background-beige fill center'>
-        <div className='flex-col form background-teal'>
+        <div className='flex-col wall-background page fill center'>
+        <div className='flex-col form wood'>
             <div className='flex-col center'>
             <div className='flex-row'>
                 <h1>Sign In</h1>
