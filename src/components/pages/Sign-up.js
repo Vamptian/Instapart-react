@@ -12,48 +12,53 @@ const SignUp = (props) => {
 
     const navigator = useNavigate()
     const [user, setUser] = useState({
+
         username: '',
         email: '',
         password: '',
-        phoneNumber: '',
-
+        phoneNumber: ''
 
     })
 
     const [message, setMessage] = useState('')
 
-
     const validate = (values) => {
 
         const errors = {}
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+
         if (!values.username) {
             errors.username = "Username is required!"
         }
+
         if (!values.email) {
             errors.email = "Email is required!"
         } else if (!regex.test(values.email)) {
             errors.email = "This is not a valid email"
         }
+
         if (!values.password) {
             errors.password = "Password is required!"
         } else if (values.password.length < 5) {
             errors.password = "Password must be longer then 5 characters"
         }
+
         if (!values.phoneNumber) {
             errors.phoneNumber = "Phone Number is required!"
         } else if (values.phoneNumber.length < 10) {
             errors.phoneNumber = "Must be a full phonenumber"
         }
+
         return errors
     }
-
 
     const changeHandler = (event) => {
 
         const { name, value } = event.target;
         setFormValues({ ...formValues, [name]: value });
         setUser({ ...formValues, [name]: value })
+        
     }
 
     const submitHandler = (event) => {
@@ -61,10 +66,8 @@ const SignUp = (props) => {
         setFormErrors(validate(formValues));
         setIsSubmit(true)
 
-        
-
-
     }
+    
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             axios.post('http://localhost:8080/signUp', user)
@@ -81,8 +84,6 @@ const SignUp = (props) => {
     }, [formErrors])
 
     return (
-
-
 
         <div className='flex-row wall-background fill  center '>
             <div className='flex-col  half-width'>
@@ -122,14 +123,7 @@ const SignUp = (props) => {
 
         </div>
 
-
-
-
-
     )
-
-
-
 
 }
 export default SignUp

@@ -77,8 +77,8 @@ const UserPage = (props) => {
       )
     } else {
       return (
-        <div className=" space-down1 flex-col fill">
-          <div className="flex-row backgroung-grey justify-center header">
+        <div className=" space-down1 flex-col   fill">
+          <div className="flex-row  justify-center">
             <div className="inline margin-auto header">
               <button className='user-tile center' value='Dashboard' onClick={handleWellView}>Dashboard</button>
               <button className='user-tile center' value='My-Wearhouse' onClick={handleWellView}>My Warehouse</button>
@@ -87,7 +87,7 @@ const UserPage = (props) => {
               
             </div>
           </div>
-          <div className='justify-center'>
+          <div className='justify-center '>
             {renderForm()}
           </div>
         </div>
